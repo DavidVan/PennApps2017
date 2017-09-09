@@ -10,7 +10,6 @@ router.post('/', function(req,res,next) {
     res.send(search);
 });
 
-
 router.get('/', function(req,res,next) {
     res.render('results');
 });
