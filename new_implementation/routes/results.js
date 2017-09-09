@@ -4,10 +4,13 @@ var path = require('path');
 var router = express.Router();
 
 router.post('/', function(req,res,next) {
-    var search = req.body.searchTerm;
+    var searchTerm = req.body.searchTerm;
     console.log('Got a POST request');
-    console.log(search);
-    res.send(search);
+    console.log(searchTerm);
+    res.render('results',
+        {
+            'searchTerm' : searchTerm
+        });
 });
 
 router.get('/', function(req,res,next) {

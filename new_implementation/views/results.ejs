@@ -1,10 +1,16 @@
 <DOCTYPE html>
 <html>
-    <head>
-    </head>
+    <% include partials/head.ejs %>
     <body>
+    <% include partials/header.ejs %>
+        <div>
+        <div id="search">
+            <form class="form" action="/results" method="post">
+                <input id="searchBar" type="text" name="searchTerm" value="<%= searchTerm %>" autofocus>
+                <input id="searchButton" type="submit" value="Search">
+        </div>
         <div id="card">
-        	<img src="nintendo.jpg">
+        	<img src="/images/nintendo.jpg">
         	<button id="add">ADD</button> 
         </div>
         

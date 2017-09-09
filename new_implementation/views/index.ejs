@@ -1,21 +1,8 @@
 <DOCTYPE html>
 <html>
-    <head>
-        <title>Title Name Here</title>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-    </head>
+    <% include partials/head.ejs %>
     <body>
-        <nav>
-            <div id="navContent">
-                <div id="links">
-                    <a href="/">Index</a>
-                    <a href="/about">About</a>
-                </div>
-                <div id="account">
-                    <a id="account" href="/">Name Here</a>
-                </div>
-            </div>
-        </nav>
+    <% include partials/header.ejs %>
         <div id="search">
             <form class="form" action="/results" method="post">
                 <input id="searchBar" type="text" name="searchTerm" placeholder="Search here..." autofocus>
