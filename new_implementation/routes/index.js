@@ -4,7 +4,9 @@ var router = express.Router();
 
 // Handle GET request for index page.
 router.get('/', function(req, res, next) {
-    res.send("Hello World!");
+    res.render('index', {
+        content: 'Hello World!'
+    });
 });
 
 module.exports = router;
