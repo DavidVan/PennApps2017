@@ -1,0 +1,13 @@
+#navContent {
+    background-color: red;
+    display: flex;
+    justify-content: space-between;
+}
+
+#links {
+    margin-right: auto;
+}
+
+#account {
+    margin-left: auto;
+}
