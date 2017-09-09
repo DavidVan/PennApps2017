@@ -12,6 +12,17 @@
     margin-left: auto;
 }
 
+#card{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#card-content {
+	/*justify-content: space-between;*/
+	max-width: 50%;
+}
+
 #add {
 	background-color: #008B8B; 
     border: none;
@@ -21,4 +32,28 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+}
+
+.border {
+	width: 250px;
+	padding: 10px;
+	text-align: center;
+	border: 3px dashed #ccc;
+	
+}
+
+div p {
+	font-family: 'Play', sans-serif;
+}
+
+#details{
+	left-margin: auto;
+	/*padding-right: 100px;*/
+	align-self: flex-start;
+}
+
+#image{
+	right-margin: auto;
+	/*padding-left: 100px;*/
+	align-self: flex-start;
 }
