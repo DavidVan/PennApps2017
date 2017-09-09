@@ -24,7 +24,7 @@ class App extends Component {
     );
   }
   test() {
-    fetch("/")
+    fetch("/api/helloworld")
           .then(res => res.text())
           .then(res => this.setState({text: res}));
   }
