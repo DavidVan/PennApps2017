@@ -5,7 +5,7 @@ var router = express.Router();
 // Handle GET request for index page.
 router.get('/', function(req, res, next) {
     res.render('index', {
-        content: 'Hello World!'
+        content: 'Hello World! Date is: ' + new Date()
     });
 });
 
