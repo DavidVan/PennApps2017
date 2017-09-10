@@ -1,0 +1,25 @@
+<DOCTYPE html>
+<script src="js/user.js"></script>
+<html>
+    <% include partials/head.ejs %>
+    <body>
+    <% include partials/header.ejs %>
+    <script>
+        var login_user = '<%- login_user %>'
+        if (login_user !== '')
+        {
+            login(login_user);    
+        }
+    </script>
+    <h1>Hello <em id='myName'></em>!</h1>
+    <h2>Welcome to your account!</h2>
+    <a id="logOutButton" href="/" >Log Out</a>
+    <script>
+        changeName("myName");
+        document.getElementById("logOutButton").onclick = function() {
+            console.log("Hello!");
+            logout();
+            };
+    </script>
+    </body>
+</html>
