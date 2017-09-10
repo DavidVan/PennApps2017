@@ -1,3 +1,4 @@
+        <script src="js/user.js"></script>
         <nav>
             <div id="navContent">
                 <div id="links">
@@ -5,7 +6,16 @@
                     <a href="/about">About</a>
                 </div>
                 <div id="account">
-                    <a id="account" href="/">Name Here</a>
+                    <a id="/account" href="/">Hello, <div id="username"></div></a>
+                    <script>
+                    function changeName()
+                    {
+                        console.log("Time to change names!");
+                        var name = document.getElementById('username');
+                        name.innerHTML = user;
+                    }
+                    changeName();
+                    </script>
                 </div>
             </div>
         </nav>

@@ -6,12 +6,38 @@
         <div>
         <div id="search">
             <form class="form" action="/results" method="post">
-                <input id="searchBar" type="text" name="searchTerm" value="<%= searchTerm %>" autofocus>
+                <input id="searchBar" type="text" name="searchTerm" value="<%= searchTerm %>" autofocus onfocus="this.value = this.value;">
                 <input id="searchButton" type="submit" value="Search">
         </div>
-        <div id="card">
-        	<img src="/images/nintendo.jpg">
-        	<button id="add">ADD</button> 
+
+        <div>
+            <table id='results'>
+            
+            <script>
+                products = <%- JSON.stringify(data) %>;
+
+                for (item_id in products) {
+                    
+                    var item = products[item_id];
+                    var itemName = item.itemName;
+                    var itemImageURL = item.itemImageURL;
+                    var itemPrice = item.itemPrice;
+                    var itemStore = item.itemStore;
+
+                    var html = 
+                    '<tr id="'+item_id+'">' + " " + item_id + " " + itemName + " " + itemPrice + " " + itemStore + '</tr>';
+
+                    if (itemName === '<%= searchTerm %>'){
+                        
+                    document.getElementById('results').innerHTML += html;
+                        }
+                    }
+
+            </script>
+            </table>
+
+        </div>
+
         </div>
         
     </body>
