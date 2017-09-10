@@ -1,8 +1,18 @@
+<DOCTYPE html>
 <html>
 <% include partials/head.ejs %>
 
 <body>
-    <% include partials/header.ejs &>
+    <% include partials/header.ejs %>
+    <div id="login">
+
+    <form class="loginForm" action="/account" method="post">
+<input id="input_user" type="text" name="input_user" placeholder="Username" autofocus>
+<input id="input_pass" type="password" placeholder="Password" name="input_pass">
+<input id="loginButton" type="submit" value="Login">
+    </form>
+
+    </div>
 
     </body>
 
