@@ -1,23 +1,42 @@
 <DOCTYPE html>
 <html>
-    <head>
-    <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    </head>
+    <% include partials/head.ejs %>
     <body>
-        <div id="card">
-        	<div id="card-content">
-	        	<div id="image"><img src="nintendo.jpg" class="border"></div>
+    <% include partials/header.ejs %>
+        <div>
+        <div id="search">
+            <form class="form" action="/results" method="post">
+                <input id="searchBar" type="text" name="searchTerm" value="<%= searchTerm %>" autofocus onfocus="this.value = this.value;">
+                <input id="searchButton" type="submit" value="Search">
+        </div>
 
-	        	<div id="details">
-	        		<p>Item Name: Nintendo Switch</p>
-	        		<p>Store: Target</p>
-	        		<p>Price: $256</p>
+        <div>
+            <table id='results'>
+            
+            <script>
+                products = <%- JSON.stringify(data) %>;
 
-	        		<button id="add">ADD</button> 
-	        	</div>
-	        </div>
-       	
+                for (item_id in products) {
+                    
+                    var item = products[item_id];
+                    var itemName = item.itemName;
+                    var itemImageURL = item.itemImageURL;
+                    var itemPrice = item.itemPrice;
+                    var itemStore = item.itemStore;
+
+                    var html = 
+                    '<tr id="'+item_id+'">' + " " + item_id + " " + itemName + " " + itemPrice + " " + itemStore + '</tr>';
+
+                    if (itemName === '<%= searchTerm %>'){
+                        
+                    document.getElementById('results').innerHTML += html;
+                        }
+                    }
+
+            </script>
+            </table>
+
+        </div>
         </div>
         
     </body>

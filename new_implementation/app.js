@@ -1,6 +1,7 @@
 var bodyParser = require('body-parser');
 var express = require('express');
 var path = require('path');
+var firebase = require('./firebase');
 
 var index = require('./routes/index.js'); // Include our index.js file from 'routes' folder.
 var search = require('./routes/search.js');
